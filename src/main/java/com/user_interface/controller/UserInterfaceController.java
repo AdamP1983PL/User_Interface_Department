@@ -6,8 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class UserInterfaceController {
 
-    @GetMapping("/csm/index")
+    @GetMapping("/login")
     public String showIndex() {
-        return "index";
+        return "login";
+    }
+
+    @GetMapping("/home")
+    public String showHome() {
+        return "home";
     }
 }
