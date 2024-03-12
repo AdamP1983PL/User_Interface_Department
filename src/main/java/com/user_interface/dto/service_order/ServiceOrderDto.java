@@ -13,6 +13,8 @@ import java.time.LocalDateTime;
 @Builder
 public class ServiceOrderDto {
 
+    /* todo DO I NEED VALIDATION HERE????????????????*/
+
     private Long id;
     private LocalDateTime dateTimeCreated;
     private LocalDateTime dateTimeUpdated;

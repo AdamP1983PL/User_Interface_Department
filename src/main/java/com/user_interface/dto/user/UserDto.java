@@ -12,6 +12,8 @@ import javax.validation.constraints.Size;
 @Builder
 public class UserDto {
 
+    /* todo DO I NEED VALIDATION HERE????????????????*/
+
     private Long id;
     @Size(min = 3, max = 20)
     @NotEmpty(message = "First name should not be empty.")

@@ -13,6 +13,8 @@ import javax.validation.constraints.Size;
 @Builder
 public class VehicleDto {
 
+    /* todo DO I NEED VALIDATION HERE????????????????*/
+
     private Long id;
     @Size(min = 3, max = 12)
     @NotEmpty(message = "Registration number should not be empty.")

@@ -13,6 +13,8 @@ import javax.validation.constraints.Size;
 @Builder
 public class CustomerDto {
 
+    /* todo DO I NEED VALIDATION HERE????????????????*/
+
     private Long id;
     @Size(min = 3, max = 100)
     @NotEmpty(message = "Customer name should not be empty.")
@@ -56,6 +58,7 @@ public class CustomerDto {
     @Size(min = 3, max = 30)
     @NotEmpty(message = "Customer person phone number should not be empty.")
     private String contactPersonPhone;
+
 }
 
 
