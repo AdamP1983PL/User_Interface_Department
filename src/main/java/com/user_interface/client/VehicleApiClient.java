@@ -2,30 +2,39 @@ package com.user_interface.client;
 
 import com.user_interface.dto.vehicle.VehicleDto;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.MediaType;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @FeignClient(name = "${vehicle-department.application.name}")
 public interface VehicleApiClient {
 
-    @GetMapping("/")
+    @GetMapping("/api/vehicle/")
     List<VehicleDto> findAllVehicles();
 
-    @GetMapping("/vin/{vin}")
+    @GetMapping("/api/vehicle/vin/{vin}")
     VehicleDto findVehicleByVIN(@PathVariable("vin") String vin);
 
-    @GetMapping("/reg-num/{number}")
+    @GetMapping("/api/vehicle/reg-num/{number}")
     VehicleDto findVehicleByRegistrationNumber(@PathVariable("number") String number);
 
-    @PostMapping("/")
+    @PostMapping("/api/vehicle/")
     VehicleDto createVehicle(@RequestBody VehicleDto vehicleDto);
 
-    @PutMapping("/{number}")
+    @PutMapping("/api/vehicle/{number}")
     VehicleDto updateVehicle(@RequestBody VehicleDto vehicleDto,
                              @PathVariable("number") String number);
 
-    @DeleteMapping("/{number}")
+//    @PostMapping("/api/vehicle/frontend/update/{registration}")
+//    String updateVehicle(@PathVariable("registration") String registration,
+//                                @Valid @ModelAttribute("vehicleDto") VehicleDto vehicleDto,
+//                                 Model model);
+
+    @DeleteMapping("/api/vehicle/{number}")
     Void deleteVehicleByRegistrationNumber(@PathVariable("number") String number);
 
 }

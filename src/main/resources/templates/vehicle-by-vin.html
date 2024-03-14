@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <div th:replace="~{fragments/head-content :: head-content}"></div>
+</head>
+<body>
+<nav th:replace="~{fragments/navigation :: nav}"></nav>
+<br>
+<div class="container row col-md-6 offset-md-3">
+  <div class="card">
+    <div class="card-header">
+      <h3>Vehicle Details</h3>
+    </div>
+    <div class="card-body">
+      <form action="" method="get" role="form"
+            th:action="@{/home/find-vehicle-by-vin/{vin}(vin=${vehicleDto.vehicleIdentificationNumber})}"
+            th:object="${vehicleDto}">
+        <h5>
+          <p>Id:<span th:text="${vehicleDto.id}"></span></p>
+          <p>Registration number:<span th:text="${vehicleDto.registrationNumber}"></span></p>
+          <p>VIN:<span th:text="${vehicleDto.vehicleIdentificationNumber}"></span></p>
+          <p>Manufacturer:<span th:text="${vehicleDto.manufacturer}"></span></p>
+          <p>Model:<span th:text="${vehicleDto.model}"></span></p>
+          <p>Production Year:<span th:text="${vehicleDto.productionYear}"></span></p>
+          <p>Mileage:<span th:text="${vehicleDto.mileage}"></span></p>
+          <p>Engine Type:<span th:text="${vehicleDto.engineType}"></span></p>
+          <p>GearboxType:<span th:text="${vehicleDto.gearboxType}"></span></p>
+          <p>Additional Information::<span th:text="${vehicleDto.additionalInformation}"></span></p>
+        </h5>
+      </form>
+      <div class="mb-3">
+        <a th:href="@{/home/find-all-vehicles}">Back to Vehicles List</a>
+      </div>
+      <div class="mb-3">
+        <a th:href="@{/home}">Back to Home Page</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

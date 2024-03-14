@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <div th:replace="~{fragments/head-content :: head-content}"></div>
+    <div th:replace="~{fragments/head-content :: head-content}"></div>
 </head>
 <body>
 <nav th:replace="~{fragments/navigation :: nav}"></nav>
 <br>
 <div class="container">
-  <div class="text-center">
-    <h3>Truck Service Management Home Page</h3>
-  </div>
-  <hr>
-  <br>
-  <br>
-  <div class="text-center">
-    <a href="">
-      <h3>Create Service Request</h3>
-    </a>
-  </div>
-  <br>
-  <br>
-  <br>
-  <div class="text-center">
-    <a href="">
-      <h3>Show All Service Requests</h3>
-    </a>
-  </div>
-  <br>
+    <div class="text-center">
+        <h3>Truck Service Management Home Page</h3>
+    </div>
+    <hr>
+<!--    <div class="text-center">-->
+<!--        <a href="">-->
+<!--            <h3>Create Service Request</h3>-->
+<!--        </a>-->
+<!--    </div>-->
+<!--    <div class="text-center">-->
+<!--        <a href="">-->
+<!--            <h3>Show All Service Requests</h3>-->
+<!--        </a>-->
+<!--    </div>-->
+<!--    <div class="text-center">-->
+<!--        <a th:href="@{home/show-all-customers}">-->
+<!--            <h3>Show All Customers</h3>-->
+<!--        </a>-->
+<!--    </div>-->
+    <div class="text-center">
+        <a th:href="@{/home/find-all-vehicles}">
+            <h3>Find all Vehicles</h3>
+        </a>
+    </div>
+    <br>
+    <div class="text-center">
+        <a th:href="@{/home/find-vehicle-by-vin}">
+            <h3>Find Vehicle by VIN</h3>
+        </a>
+    </div>
+    <br>
+    <div class="text-center">
+        <a th:href="@{/home/find-vehicle-by-registration}">
+            <h3>Find Vehicle by Registration Number</h3>
+        </a>
+    </div>
+    <br>
 </div>
 </body>
 </html>

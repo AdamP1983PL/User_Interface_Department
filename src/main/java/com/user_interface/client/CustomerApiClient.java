@@ -9,22 +9,22 @@ import java.util.List;
 @FeignClient(name = "${customer-department.application.name}")
 public interface CustomerApiClient {
 
-    @GetMapping("/")
+    @GetMapping("/customer/")
     List<CustomerDto> findAllCustomers();
 
-    @GetMapping("/{id}")
+    @GetMapping("/customer/{id}")
     CustomerDto findCustomerById(@PathVariable("id") Long id);
 
-    @GetMapping("/name/{name}")
+    @GetMapping("/customer/name/{name}")
     List<CustomerDto> findCustomersByName(@PathVariable("name") String name);
 
-    @PostMapping("/")
+    @PostMapping("/customer/")
     CustomerDto createCustomer(@RequestBody CustomerDto customerDto);
 
-    @PutMapping("/{id}")
-    CustomerDto updateCustomer(@RequestBody CustomerDto customerDto, @PathVariable Long id);
+    @PutMapping("/customer/{id}")
+    CustomerDto updateCustomer(@RequestBody CustomerDto customerDto, @PathVariable("id") Long id);
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/customer/{id}")
     Void deleteCustomer(@PathVariable("id") Long id);
 
 }
