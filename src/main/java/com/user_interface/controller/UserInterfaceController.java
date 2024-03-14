@@ -96,7 +96,7 @@ public class UserInterfaceController {
         VehicleDto updatedVehicleDto = userInterfaceService.updateVehicle(vehicleDto, number);
         model.addAttribute("updatedVehicleDto", updatedVehicleDto);
         log.info("====>>>> updateVehicle(" + number + ") execution.");
-        return "redirect:home/all-vehicles";
+        return "redirect:/home/find-all-vehicles";
     }
 
 
