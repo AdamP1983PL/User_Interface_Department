@@ -8,28 +8,34 @@
 <br>
 <div class="container">
     <div class="text-center">
-        <h3>Truck Service Management Home Page</h3>
+        <h3>Vehicle Department User Interface</h3>
     </div>
     <hr>
     <br>
     <div class="text-center">
-        <a th:href="@{/home/vehicle/user-interface}">
-            <h3>Vehicle Department User Interface</h3>
+        <a th:href="@{/home/find-all-vehicles}">
+            <h3>Find all Vehicles</h3>
         </a>
     </div>
     <br>
     <div class="text-center">
-        <a th:href="@{/home/customer/user-interface}">
-            <h3>Customer Department User Interface</h3>
+        <a th:href="@{/home/find-vehicle-by-vin}">
+            <h3>Find Vehicle by VIN</h3>
         </a>
     </div>
     <br>
     <div class="text-center">
-        <a th:href="@{/home/service-operations/user-interface}">
-            <h3>Service Operations Department User Interface</h3>
+        <a th:href="@{/home/find-vehicle-by-registration}">
+            <h3>Find Vehicle by Registration Number</h3>
         </a>
     </div>
-
+    <br>
+    <div class="text-center">
+        <a th:href="@{/home/add-vehicle}">
+            <h3>Create New Vehicle</h3>
+        </a>
+    </div>
 </div>
 </body>
 </html>
+
