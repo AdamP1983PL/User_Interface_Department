@@ -4,8 +4,6 @@ import com.user_interface.dto.vehicle.VehicleDto;
 import com.user_interface.service.UserInterfaceServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -45,6 +43,14 @@ public class UserInterfaceController {
         return "vehicle-by-vin";
     }
 
+    @GetMapping("/home/add-vehicle")
+    public String showAddVehiclePage(Model model) {
+        VehicleDto vehicleDto = new VehicleDto();
+        model.addAttribute("vehicleDto", vehicleDto);
+        log.info("====>>>> addVehicle() execution");
+        return "add-new-vehicle";
+    }
+
     @PostMapping("/home/create-vehicle")
     public String saveNewVehicle(@Valid @ModelAttribute("vehicleDto") VehicleDto vehicleDto,
                                  BindingResult result, Model model) {
@@ -55,7 +61,7 @@ public class UserInterfaceController {
 
         userInterfaceService.createVehicle(vehicleDto);
         log.info("====>>>> saveNewVehicle() execution");
-        return "redirect:/home/all-vehicles";
+        return "redirect:/home/find-all-vehicles";
     }
 
     @GetMapping("/home/details/{registration}")
@@ -73,6 +79,7 @@ public class UserInterfaceController {
         log.info("====>>>> editVehicle() execution");
         return "edit-vehicle";
     }
+
 
 //    @PutMapping("/api/update/{number}")
 //    public String updateVehicle(@RequestBody VehicleDto vehicleDto,
@@ -93,11 +100,11 @@ public class UserInterfaceController {
     }
 
 
-    @GetMapping("/home/delete/{registration}")
+    @DeleteMapping("/home/delete/{registration}")
     public String deleteVehicleByRegistration(@PathVariable("registration") String registration) {
         log.info("====>>>> deleteVehicle(" + registration + ") execution");
         userInterfaceService.deleteVehicleByRegistrationNumber(registration);
-        return "redirect:/home/all-vehicles";
+        return "redirect:/home/find-all-vehicles";
     }
 
 

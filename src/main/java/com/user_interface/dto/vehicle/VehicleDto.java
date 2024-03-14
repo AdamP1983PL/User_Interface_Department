@@ -29,9 +29,9 @@ public class VehicleDto {
     private String productionYear;
     @Min(0)
     private double mileage;
-    @NotEmpty(message = "Select option.")
+//    @NotEmpty(message = "Select option.")
     private EngineType engineType;
-    @NotEmpty(message = "Select option.")
+//    @NotEmpty(message = "Select option.")
     private GearboxType gearboxType;
     @Size(max = 255)
     private String additionalInformation;

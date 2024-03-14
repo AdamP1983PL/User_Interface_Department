@@ -13,7 +13,7 @@
         </div>
         <div class="card-body">
             <form action="#" method="post" role="form"
-                  th:action="@{/api/vehicle/frontend/save-new-vehicle}" th:object="${vehicleDto}">
+                  th:action="@{/home/create-vehicle}" th:object="${vehicleDto}">
 
                 <div class="form-group mb-3">
                     <label for="registrationNumber" class="form-label">Registration Number</label>
@@ -60,7 +60,7 @@
                     <p> Select Engine Type:
                         <select name="EngineType">
                             <option value=""
-                                    th:each="engineType : ${T(com.vehicle_department.model.enums.EngineType).values()}"
+                                    th:each="engineType : ${T(com.user_interface.dto.vehicle.EngineType).values()}"
                                     th:text="${engineType.displayText}"
                                     th:value="${engineType.name()}">
                             </option>
@@ -71,7 +71,7 @@
                     <p> Select Gearbox Type:
                         <select name="GearboxType">
                             <option value=""
-                                    th:each="gearboxType : ${T(com.vehicle_department.model.enums.GearboxType).values()}"
+                                    th:each="gearboxType : ${T(com.user_interface.dto.vehicle.GearboxType).values()}"
                                     th:text="${gearboxType.displayText}"
                                     th:value="${gearboxType.name()}">
                             </option>
@@ -79,7 +79,7 @@
                     </p>
                 </div>
                 <div class="form-group mb-3">
-                    <label for="additionalInformation" class="form-label">Engine Additional Information</label>
+                    <label for="additionalInformation" class="form-label">Additional Information</label>
                     <input class="form-control" th:field="*{additionalInformation}"
                            type="text" id="additionalInformation" name="additionalInformation"
                            placeholder="Enter Additional Information">
@@ -87,7 +87,7 @@
                        th:errors="*{additionalInformation}"></p>
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-primary" type="submit">Save Vehicle</button>
+                    <button class="btn btn-primary btn-sm" type="submit">Save Vehicle</button>
                 </div>
             </form>
             <div class="mb-3">
