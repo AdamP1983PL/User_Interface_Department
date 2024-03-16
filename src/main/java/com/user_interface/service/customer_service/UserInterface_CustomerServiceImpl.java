@@ -40,6 +40,6 @@ public class UserInterface_CustomerServiceImpl implements UserInterface_Customer
 
     @Override
     public Void deleteCustomer(Long id) {
-        return null;
+        return customerApiClient.deleteCustomer(id);
     }
 }

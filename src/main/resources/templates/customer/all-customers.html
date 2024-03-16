@@ -22,9 +22,9 @@
             <th>City</th>
             <th>Postal code</th>
             <th>Street</th>
-            <th>Customer email</th>
-            <th>Customer phone number</th>
-            <th>Customer website</th>
+<!--            <th>Customer email</th>-->
+<!--            <th>Customer phone number</th>-->
+<!--            <th>Customer website</th>-->
             <th>Details</th>
             <th>Edit</th>
             <th>Delete</th>
@@ -39,9 +39,9 @@
             <td th:text="*{city}"></td>
             <td th:text="*{postalCode}"></td>
             <td th:text="*{street}"></td>
-            <td th:text="*{customerEmail}"></td>
-            <td th:text="*{customerPhoneNumber}"></td>
-            <td th:text="*{customerWebsite}"></td>
+<!--            <td th:text="*{customerEmail}"></td>-->
+<!--            <td th:text="*{customerPhoneNumber}"></td>-->
+<!--            <td th:text="*{customerWebsite}"></td>-->
             <td>
                 <a th:href="@{/home/details/customer/{id}(id=${customer.id})}"
                    class="btn btn-primary btn-sm">Details</a>
@@ -51,7 +51,7 @@
                    class="btn btn-primary btn-sm">Edit</a>
             </td>
             <td>
-                <a href=""
+                <a th:href="@{/home/delete/customer/{id}(id=${customer.id})}"
                    class="btn btn-danger btn-sm"
                    onclick="if (!(confirm('Delete this Customer?'))) return false">Delete</a>
             </td>

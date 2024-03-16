@@ -9,34 +9,40 @@
 <div class="container row col-md-6 offset-md-3">
     <div class="card">
         <div class="card-header">
-            <h3>Vehicle Details</h3>
+            <h3>Vehicle</h3>
         </div>
         <div class="card-body">
             <form action="" method="get" role="form"
                   th:action="@{/home/details/{registration}(registration=${vehicleDetails.registrationNumber})}"
                   th:object="${vehicleDetails}">
+                <h6>Details:</h6>
                 <h5>
-                    <p>Id:<span th:text="${vehicleDetails.id}"></span></p>
-                    <p>Registration number:<span th:text="${vehicleDetails.registrationNumber}"></span></p>
-                    <p>VIN:<span th:text="${vehicleDetails.vehicleIdentificationNumber}"></span></p>
-                    <p>Manufacturer:<span th:text="${vehicleDetails.manufacturer}"></span></p>
-                    <p>Model:<span th:text="${vehicleDetails.model}"></span></p>
-                    <p>Production Year:<span th:text="${vehicleDetails.productionYear}"></span></p>
-                    <p>Mileage:<span th:text="${vehicleDetails.mileage}"></span></p>
-                    <p>Engine Type:<span th:text="${vehicleDetails.engineType}"></span></p>
-                    <p>GearboxType:<span th:text="${vehicleDetails.gearboxType}"></span></p>
-                    <p>Additional Information::<span th:text="${vehicleDetails.additionalInformation}"></span></p>
+                    <p>Id: <span th:text="${vehicleDetails.id}"></span></p>
+                    <p>Registration number: <span th:text="${vehicleDetails.registrationNumber}"></span></p>
+                    <p>VIN: <span th:text="${vehicleDetails.vehicleIdentificationNumber}"></span></p>
+                    <p>Manufacturer: <span th:text="${vehicleDetails.manufacturer}"></span></p>
+                    <p>Model: <span th:text="${vehicleDetails.model}"></span></p>
+                    <p>Production Year: <span th:text="${vehicleDetails.productionYear}"></span></p>
+                    <p>Mileage: <span th:text="${vehicleDetails.mileage}"></span> km</p>
+                </h5>
+                <hr>
+                <h6>Additional information:</h6>
+                <h5>
+                    <p>Engine Type: <span th:text="${vehicleDetails.engineType}"></span></p>
+                    <p>GearboxType: <span th:text="${vehicleDetails.gearboxType}"></span></p>
+                    <p>Additional Information: <span th:text="${vehicleDetails.additionalInformation}"></span></p>
                 </h5>
             </form>
+            <hr>
             <div class="mb-3">
-                <h5>
+                <h6>
                     <a th:href="@{/home/find-all-vehicles}">Back to Vehicles List</a>
-                </h5>
+                </h6>
             </div>
             <div class="mb-3">
-                <h5>
+                <h6>
                     <a th:href="@{/home}">Back to Home Page</a>
-                </h5>
+                </h6>
             </div>
         </div>
     </div>

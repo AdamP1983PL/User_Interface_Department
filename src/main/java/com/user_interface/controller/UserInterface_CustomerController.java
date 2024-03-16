@@ -57,6 +57,12 @@ public class UserInterface_CustomerController {
         return "redirect:/home/find-all-customers";
     }
 
+    @DeleteMapping("/delete/customer/{id}")
+    public String deleteCustomerById(@PathVariable("id") Long id) {
+        userInterface_customerServiceImpl.deleteCustomer(id);
+        log.info("====>>>> deleteCustomerById(\"id: " + id + "\") execution.");
+        return "redirect:/home/find-all-customers";
+    }
 }
 
 
