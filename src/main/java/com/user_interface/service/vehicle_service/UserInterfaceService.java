@@ -1,4 +1,4 @@
-package com.user_interface.service;
+package com.user_interface.service.vehicle_service;
 
 import com.user_interface.dto.customer.CustomerDto;
 import com.user_interface.dto.vehicle.VehicleDto;

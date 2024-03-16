@@ -1,10 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <div th:replace="~{fragments/head-content :: head-content}"></div>
 </head>
 <body>
-
+<nav th:replace="~{fragments/navigation :: nav}"></nav>
+<div class="container">
+    <div class="text-center">
+        <br>
+        <h3>Customers List</h3>
+    </div>
+    <hr>
+    <br>
+    <table class="table table-striped table-hover table-bordered table-primary">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Customer name</th>
+            <th>Tax number</th>
+            <th>Country</th>
+            <th>City</th>
+            <th>Postal code</th>
+            <th>Street</th>
+            <th>Customer email</th>
+            <th>Customer phone number</th>
+            <th>Customer website</th>
+            <th>Is active</th>
+            <th>Is payment blocked</th>
+            <th>Payment method</th>
+            <th>Tax value</th>
+            <th>Contact person name</th>
+            <th>Contact person email</th>
+            <th>Contact person phone</th>
+            <th>Details</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer : ${customerDtoList}" th:object="${customer}">
+            <td th:text="*{id}"></td>
+            <td th:text="*{customerName}"></td>
+            <td th:text="*{taxNumber}"></td>
+            <td th:text="*{country}"></td>
+            <td th:text="*{city}"></td>
+            <td th:text="*{postalCode}"></td>
+            <td th:text="*{street}"></td>
+            <td th:text="*{customerEmail}"></td>
+            <td th:text="*{customerPhoneNumber}"></td>
+            <td th:text="*{customerWebsite}"></td>
+            <td th:text="*{isActive()}"></td>
+            <td th:text="*{paymentIsBlocked}"></td>
+            <td th:text="*{paymentMethod}"></td>
+            <td th:text="*{taxValue}"></td>
+            <td th:text="*{contactPersonName}"></td>
+            <td th:text="*{contactPersonEmail}"></td>
+            <td th:text="*{contactPersonPhone}"></td>
+            <td>
+                <a href=""
+                   class="btn btn-primary btn-sm">Details</a>
+            </td>
+            <td>
+                <a href=""
+                   class="btn btn-primary btn-sm">Edit</a>
+            </td>
+            <td>
+                <a href=""
+                   class="btn btn-danger btn-sm"
+                   onclick="if (!(confirm('Delete this Customer?'))) return false">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+    <div>
+        <h5>
+            <a href="">Add New Customer</a>
+        </h5>
+    </div>
+    </p>
+    <p>
+    <div>
+        <a href="">Back to Home Page</a>
+    </div>
+    </p>
+</div>
 </body>
 </html>

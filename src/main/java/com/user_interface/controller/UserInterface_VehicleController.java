@@ -1,7 +1,7 @@
 package com.user_interface.controller;
 
 import com.user_interface.dto.vehicle.VehicleDto;
-import com.user_interface.service.UserInterfaceServiceImpl;
+import com.user_interface.service.vehicle_service.UserInterfaceServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

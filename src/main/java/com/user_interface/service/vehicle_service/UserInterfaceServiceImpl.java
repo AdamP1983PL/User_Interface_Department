@@ -1,11 +1,9 @@
-package com.user_interface.service;
+package com.user_interface.service.vehicle_service;
 
 import com.user_interface.client.VehicleApiClient;
 import com.user_interface.dto.vehicle.VehicleDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 
 import java.util.List;
 
