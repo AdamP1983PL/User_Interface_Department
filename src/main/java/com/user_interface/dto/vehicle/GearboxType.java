@@ -1,8 +1,10 @@
 package com.user_interface.dto.vehicle;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public enum GearboxType {
     UNKNOWN("UNKNOWN"),
     MANUAL("MANUAL"),
@@ -11,7 +13,4 @@ public enum GearboxType {
 
     private final String displayText;
 
-    GearboxType(String displayText) {
-        this.displayText = displayText;
-    }
 }

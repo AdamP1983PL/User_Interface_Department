@@ -1,8 +1,10 @@
 package com.user_interface.dto.vehicle;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public enum EngineType {
     UNKNOWN("UNKNOWN"),
     DIESEL("DIESEL"),
@@ -11,9 +13,5 @@ public enum EngineType {
     ELECTRIC("ELECTRIC");
 
     private final String displayText;
-
-    EngineType(String displayText) {
-        this.displayText = displayText;
-    }
 
 }

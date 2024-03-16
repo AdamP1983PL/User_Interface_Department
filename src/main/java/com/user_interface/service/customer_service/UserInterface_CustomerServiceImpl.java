@@ -30,7 +30,7 @@ public class UserInterface_CustomerServiceImpl implements UserInterface_Customer
 
     @Override
     public CustomerDto createCustomer(CustomerDto customerDto) {
-        return null;
+        return customerApiClient.createCustomer(customerDto);
     }
 
     @Override

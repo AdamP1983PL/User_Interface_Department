@@ -57,7 +57,6 @@ public class UserInterface_VehicleController {
             model.addAttribute("vehicleDto", vehicleDto);
             return "vehicle/add-new-vehicle";
         }
-
         userInterfaceService.createVehicle(vehicleDto);
         log.info("====>>>> saveNewVehicle() execution");
         return "redirect:/home/find-all-vehicles";

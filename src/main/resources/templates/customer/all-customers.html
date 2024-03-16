@@ -25,13 +25,6 @@
             <th>Customer email</th>
             <th>Customer phone number</th>
             <th>Customer website</th>
-            <th>Is active</th>
-            <th>Is payment blocked</th>
-            <th>Payment method</th>
-            <th>Tax value</th>
-            <th>Contact person name</th>
-            <th>Contact person email</th>
-            <th>Contact person phone</th>
             <th>Details</th>
             <th>Edit</th>
             <th>Delete</th>
@@ -49,13 +42,6 @@
             <td th:text="*{customerEmail}"></td>
             <td th:text="*{customerPhoneNumber}"></td>
             <td th:text="*{customerWebsite}"></td>
-            <td th:text="*{isActive()}"></td>
-            <td th:text="*{paymentIsBlocked}"></td>
-            <td th:text="*{paymentMethod}"></td>
-            <td th:text="*{taxValue}"></td>
-            <td th:text="*{contactPersonName}"></td>
-            <td th:text="*{contactPersonEmail}"></td>
-            <td th:text="*{contactPersonPhone}"></td>
             <td>
                 <a th:href="@{/home/details/customer/{id}(id=${customer.id})}"
                    class="btn btn-primary btn-sm">Details</a>
@@ -75,7 +61,7 @@
     <p>
     <div>
         <h5>
-            <a href="">Add New Customer</a>
+            <a th:href="@{/home/add-customer}">Add New Customer</a>
         </h5>
     </div>
     </p>
@@ -86,13 +72,6 @@
         </h5>
     </div>
     </p>
-
-
-    <p>
-        move some columns into details section
-    </p>
-
-
 </div>
 </body>
 </html>

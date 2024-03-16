@@ -6,10 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Slf4j
@@ -32,9 +32,41 @@ public class UserInterface_CustomerController {
     public String showCustomerDetails(@PathVariable("id") Long id, Model model) {
         CustomerDto customerDetails = userInterface_customerServiceImpl.findCustomerById(id);
         model.addAttribute("customerDetails", customerDetails);
-        log.info("========>>>>>>>> customer name: " + customerDetails.getCustomerName());
         log.info("====>>>>showCustomerDetails(" + id + ") execution.");
         return "customer/customer-details";
     }
 
+    @GetMapping("/add-customer")
+    public String showAddCustomerPage(Model model) {
+        CustomerDto customerDto = new CustomerDto();
+        model.addAttribute("customerDto", customerDto);
+        log.info("====>>>>showAddCustomerPage() execution.");
+        return "customer/add-new-customer";
+    }
+
+    @PostMapping("/create-customer")
+    public String saveNewCustomer(@Valid @ModelAttribute("customerDto") CustomerDto customerDto,
+                                  BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            log.info("====>>>> saveNewCustomer() result.hasError() execution.");
+            model.addAttribute("customerDto", customerDto);
+            return "customer/add-new-customer";
+        }
+        userInterface_customerServiceImpl.createCustomer(customerDto);
+        log.info("====>>>> saveNewCustomer() execution.");
+        return "redirect:/home/find-all-customers";
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+

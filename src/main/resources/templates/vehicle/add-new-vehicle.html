@@ -16,7 +16,7 @@
                   th:action="@{/home/create-vehicle}" th:object="${vehicleDto}">
 
                 <div class="form-group mb-3">
-                    <label for="registrationNumber" class="form-label">Registration Number</label>
+                    <label for="registrationNumber" class="form-label">Registration number</label>
                     <input class="form-control" th:field="*{registrationNumber}"
                            type="text" id="registrationNumber" name="registrationNumber"
                            placeholder="Enter Registration Number">
@@ -24,7 +24,7 @@
                        th:errors="*{registrationNumber}"></p>
                 </div>
                 <div class="form-group mb-3">
-                    <label for="vehicleIdentificationNumber" class="form-label">VIN Number</label>
+                    <label for="vehicleIdentificationNumber" class="form-label">VIN number</label>
                     <input class="form-control" th:field="*{vehicleIdentificationNumber}"
                            type="text" id="vehicleIdentificationNumber" name="vehicleIdentificationNumber"
                            placeholder="Enter VIN Number">
@@ -34,7 +34,7 @@
                 <div class="form-group mb-3">
                     <label for="manufacturer" class="form-label">Manufacturer</label>
                     <input class="form-control" th:field="*{manufacturer}"
-                           type="text" id="manufacturer" name="manufacturer" placeholder="Enter Manufacturer">
+                           type="text" id="manufacturer" name="manufacturer" placeholder="Enter manufacturer">
                     <p th:if="${#fields.hasErrors('manufacturer')}" class="text-danger" th:errors="*{manufacturer}"></p>
                 </div>
                 <div class="form-group mb-3">
@@ -46,14 +46,14 @@
                 <div class="form-group mb-3">
                     <label for="productionYear" class="form-label">Production Year</label>
                     <input class="form-control" th:field="*{productionYear}"
-                           type="text" id="productionYear" name="productionYear" placeholder="Enter Production Year">
+                           type="text" id="productionYear" name="productionYear" placeholder="Enter production year">
                     <p th:if="${#fields.hasErrors('productionYear')}" class="text-danger"
                        th:errors="*{productionYear}"></p>
                 </div>
                 <div class="form-group mb-3">
                     <label for="mileage" class="form-label">Mileage</label>
                     <input class="form-control" th:field="*{mileage}"
-                           type="text" id="mileage" name="mileage" placeholder="Enter Mileage">
+                           type="text" id="mileage" name="mileage" placeholder="Enter mileage">
                     <p th:if="${#fields.hasErrors('mileage')}" class="text-danger" th:errors="*{mileage}"></p>
                 </div>
                 <div class="form-group mb-3">
@@ -82,7 +82,7 @@
                     <label for="additionalInformation" class="form-label">Additional Information</label>
                     <input class="form-control" th:field="*{additionalInformation}"
                            type="text" id="additionalInformation" name="additionalInformation"
-                           placeholder="Enter Additional Information">
+                           placeholder="Enter additional information">
                     <p th:if="${#fields.hasErrors('additionalInformation')}" class="text-danger"
                        th:errors="*{additionalInformation}"></p>
                 </div>
