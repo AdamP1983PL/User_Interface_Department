@@ -6,19 +6,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name = "${spring.application.name}")
+@FeignClient(name = "${feign.client.customer.name}")
 public interface UserInterface_CustomerService {
 
     List<CustomerDto> findAllCustomers();
-
     CustomerDto findCustomerById(@PathVariable("id") Long id);
-
     List<CustomerDto> findCustomersByName(@PathVariable("name") String name);
-
     CustomerDto createCustomer(@RequestBody CustomerDto customerDto);
-
     CustomerDto updateCustomer(@RequestBody CustomerDto customerDto, @PathVariable("id") Long id);
-
     Void deleteCustomer(@PathVariable("id") Long id);
 
 }

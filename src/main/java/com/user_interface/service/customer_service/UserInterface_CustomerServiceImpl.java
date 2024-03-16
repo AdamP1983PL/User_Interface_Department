@@ -20,7 +20,7 @@ public class UserInterface_CustomerServiceImpl implements UserInterface_Customer
 
     @Override
     public CustomerDto findCustomerById(Long id) {
-        return null;
+        return customerApiClient.findCustomerById(id);
     }
 
     @Override

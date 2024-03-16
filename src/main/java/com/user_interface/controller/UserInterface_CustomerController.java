@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -23,8 +24,17 @@ public class UserInterface_CustomerController {
     public String findAllCustomers(Model model) {
         List<CustomerDto> customerDtoList = userInterface_customerServiceImpl.findAllCustomers();
         model.addAttribute("customerDtoList", customerDtoList);
-        log.info("====>>>> findAllCustomers execution");
+        log.info("====>>>> findAllCustomers execution.");
         return "customer/all-customers";
+    }
+
+    @GetMapping("/details/customer/{id}")
+    public String showCustomerDetails(@PathVariable("id") Long id, Model model) {
+        CustomerDto customerDetails = userInterface_customerServiceImpl.findCustomerById(id);
+        model.addAttribute("customerDetails", customerDetails);
+        log.info("========>>>>>>>> customer name: " + customerDetails.getCustomerName());
+        log.info("====>>>>showCustomerDetails(" + id + ") execution.");
+        return "customer/customer-details";
     }
 
 }

@@ -2,12 +2,8 @@ package com.user_interface.client;
 
 import com.user_interface.dto.vehicle.VehicleDto;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.http.MediaType;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @FeignClient(name = "${vehicle-department.application.name}")
